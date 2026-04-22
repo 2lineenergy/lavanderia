@@ -33,10 +33,23 @@
             z-index: 1000;
         }
         
-        .logo-container img { 
-            height: 60px; /* Un poco más grande para que destaque */
+        /* Contenedor del Logo con Sistema de Emergencia */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+        .logo-img { 
+            height: 100%;
             width: auto; 
             display: block;
+        }
+        .logo-text-fallback {
+            display: none; /* Oculto por defecto */
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            letter-spacing: -1px;
         }
         
         .nav-links a { 
@@ -145,14 +158,24 @@
 
     <nav>
         <div class="logo-container">
-            <img src="img/logo_2lineenergy.png" alt="2 Line Energy Logo" onerror="this.src='https://via.placeholder.com/200x60?text=2+Line+Energy'">
+            <img src="img/logo_2lineenergy.png" alt="2 Line Energy" class="logo-img" id="main-logo" onerror="handleLogoError()">
+            <span class="logo-text-fallback" id="logo-text">2 LINE ENERGY</span>
         </div>
         <div class="nav-links">
             <a href="#servicios">Servicios</a>
-            <a href="#comparativa">Eficiencia</a>
             <a href="#contacto" class="btn-urgent">¿AVERÍA? CLICK AQUÍ</a>
         </div>
     </nav>
+
+    <script>
+        function handleLogoError() {
+            // Oculta la imagen rota
+            document.getElementById('main-logo').style.display = 'none';
+            // Muestra el texto de emergencia
+            document.getElementById('logo-text').style.display = 'block';
+            console.log("Logo no encontrado, activando fallback de texto.");
+        }
+    </script>
 
     <section class="hero">
         <h1>Máxima Eficiencia para su Lavandería Industrial</h1>
@@ -198,25 +221,29 @@
 
             <div class="form-container">
                 <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST">
+                    
                     <div class="input-group">
                         <label>Nombre o Empresa</label>
-                        <input type="text" name="nombre" class="form-control" placeholder="Ej: Hotel Paraíso" required>
+                        <input type="text" name="name" class="form-control" placeholder="Ej: Hotel Paraíso" required>
                     </div>
+
                     <div class="input-group">
-                        <label>Teléfono</label>
-                        <input type="tel" name="telefono" class="form-control" placeholder="600 000 000" required>
+                        <label>Email de contacto</label>
+                        <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
                     </div>
+
                     <div class="input-group">
-                        <label>Servicio Interesado</label>
-                        <select name="servicio" class="form-control">
-                            <option value="sat">Servicio Técnico Urgente</option>
-                            <option value="quimicos">Químicos y Dosificación</option>
-                            <option value="maquinaria">Nueva Maquinaria / Eficiencia</option>
+                        <label>Asunto / Servicio</label>
+                        <select name="subject" class="form-control">
+                            <option value="Servicio Tecnico Urgente">Servicio Técnico Urgente</option>
+                            <option value="Quimicos y Dosificacion">Químicos y Dosificación</option>
+                            <option value="Maquinaria y Eficiencia">Maquinaria y Eficiencia</option>
                         </select>
                     </div>
+
                     <div class="input-group">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" class="form-control" style="height: 120px;" placeholder="Describa su necesidad..."></textarea>
+                        <label>Mensaje o Teléfono</label>
+                        <textarea name="message" class="form-control" style="height: 120px;" placeholder="Indique su teléfono y breve descripción de la avería..." required></textarea>
                     </div>
                     
                     <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia">
