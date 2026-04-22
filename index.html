@@ -18,12 +18,12 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark-grey); background-color: var(--white); }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark-grey); background-color: var(--white); scroll-behavior: smooth; }
 
-        /* Navegación Mejorada */
+        /* Navegación Premium */
         nav { 
             background: var(--white); 
-            padding: 0.8rem 5%; 
+            padding: 0.5rem 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
@@ -31,25 +31,33 @@
             position: sticky; 
             top: 0; 
             z-index: 1000;
+            height: 80px;
         }
         
-        /* Contenedor del Logo con Sistema de Emergencia */
         .logo-container {
             display: flex;
             align-items: center;
-            height: 60px;
-        }
-        .logo-img { 
             height: 100%;
+            min-width: 200px;
+        }
+
+        .logo-img { 
+            max-height: 70px; /* Aumentado para mejor visibilidad */
             width: auto; 
             display: block;
+            transition: transform 0.3s ease;
         }
+        
+        .logo-img:hover { transform: scale(1.05); }
+
         .logo-text-fallback {
-            display: none; /* Oculto por defecto */
-            font-weight: 700;
+            display: none; 
+            font-weight: 800;
             color: var(--primary-blue);
-            font-size: 1.6rem;
-            letter-spacing: -1px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent-green);
+            padding-left: 10px;
         }
         
         .nav-links a { 
@@ -58,6 +66,7 @@
             color: var(--dark-grey); 
             font-weight: 600;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover { color: var(--primary-blue); }
@@ -65,22 +74,22 @@
         .btn-urgent {
             background: var(--urgent-red);
             color: white !important;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 8px;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
         }
 
-        /* Hero Section Profesional */
+        /* Hero & Sections */
         .hero { 
-            background: linear-gradient(rgba(0, 40, 80, 0.75), rgba(0, 40, 80, 0.75)), 
-                        url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=2070') center/cover; 
-            height: 90vh; 
+            background: linear-gradient(rgba(0, 40, 80, 0.8), rgba(0, 40, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1545173168-9f1947eeba01?q=80&w=2070') center/cover; 
+            height: 85vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -90,167 +99,82 @@
             padding: 0 20px; 
         }
 
-        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
-        .hero p { font-size: 1.4rem; max-width: 900px; margin-bottom: 2.5rem; font-weight: 300; }
-
-        .btn { 
-            padding: 15px 35px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: 0.4s; 
-            border: none; 
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .btn-whatsapp { background: #25d366; color: white; margin-right: 15px; }
-        .btn-whatsapp:hover { background: #1eb954; transform: translateY(-3px); }
-
-        /* Grid de Servicios con Iconos y Efectos */
-        section { padding: 100px 10%; }
-        .section-title { font-size: 2.8rem; margin-bottom: 1rem; color: var(--primary-blue); font-weight: 700; text-align: center; }
-        .section-subtitle { text-align: center; margin-bottom: 60px; color: #7f8c8d; font-size: 1.1rem; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .card { 
-            padding: 40px; 
-            background: var(--white); 
-            border-radius: 15px; 
-            transition: 0.3s; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 4px solid transparent;
-            text-align: center;
-        }
-        .card:hover { 
-            transform: translateY(-15px); 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
-            border-bottom: 4px solid var(--primary-blue);
-        }
-        .card i { font-size: 3.5rem; color: var(--primary-blue); margin-bottom: 25px; }
-        .card h3 { margin-bottom: 20px; font-size: 1.5rem; }
-
-        /* Formulario de Contacto Premium */
-        #contacto { background-color: var(--light-bg); border-radius: 30px; margin: 50px 5%; }
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; text-align: left; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; }
         
-        .info-box h3 { color: var(--primary-blue); margin-bottom: 20px; }
-        .info-item { display: flex; align-items: center; margin-bottom: 15px; }
-        .info-item i { margin-right: 15px; color: var(--accent-green); font-size: 1.2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 60px 0; }
+        .card { padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
 
-        .form-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .form-control { width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 8px; font-family: inherit; transition: 0.3s; }
-        .form-control:focus { outline: none; border-color: var(--primary-blue); }
+        /* Formulario */
+        #contacto { background: var(--light-bg); padding: 80px 10%; border-radius: 50px 50px 0 0; }
+        .form-container { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        .form-control { width: 100%; padding: 15px; border: 2px solid #f0f0f0; border-radius: 10px; margin-bottom: 20px; font-family: inherit; }
+        .form-control:focus { border-color: var(--primary-blue); outline: none; }
 
-        /* WhatsApp Flotante */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        .btn-submit { background: var(--primary-blue); color: white; width: 100%; padding: 18px; border-radius: 10px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        .btn-submit:hover { background: #00356e; transform: translateY(-2px); }
 
-        @media (max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-        }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo-container">
-            <img src="img/logo_2lineenergy.png" alt="2 Line Energy" class="logo-img" id="main-logo" onerror="handleLogoError()">
-            <span class="logo-text-fallback" id="logo-text">2 LINE ENERGY</span>
+            <img src="https://2lineenergy.com/lavanderia/img/logo_2lineenergy.png" 
+                 alt="2 Line Energy" 
+                 class="logo-img" 
+                 id="main-logo" 
+                 onerror="handleLogoError()">
+            <span class="logo-text-fallback" id="logo-text">2 Line Energy</span>
         </div>
         <div class="nav-links">
             <a href="#servicios">Servicios</a>
-            <a href="#contacto" class="btn-urgent">¿AVERÍA? CLICK AQUÍ</a>
+            <a href="#contacto" class="btn-urgent">URGENCIAS SAT</a>
         </div>
     </nav>
 
     <script>
         function handleLogoError() {
-            // Oculta la imagen rota
-            document.getElementById('main-logo').style.display = 'none';
-            // Muestra el texto de emergencia
-            document.getElementById('logo-text').style.display = 'block';
-            console.log("Logo no encontrado, activando fallback de texto.");
+            // Si la ruta absoluta falla, intenta la ruta relativa antes de poner el texto
+            var logo = document.getElementById('main-logo');
+            if (!logo.getAttribute('data-tried-relative')) {
+                logo.setAttribute('data-tried-relative', 'true');
+                logo.src = 'img/logo_2lineenergy.png'; 
+            } else {
+                logo.style.display = 'none';
+                document.getElementById('logo-text').style.display = 'block';
+            }
         }
     </script>
 
     <section class="hero">
-        <h1>Máxima Eficiencia para su Lavandería Industrial</h1>
-        <p>Expertos en Servicio Técnico, Suministro Químico y Optimización Energética en toda Andalucía.</p>
-        <div class="hero-btns">
-            <a href="https://wa.me/34693950556" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> CONTACTO WHATSAPP</a>
-            <a href="#contacto" class="btn" style="background: white; color: var(--primary-blue);">SOLICITAR PRESUPUESTO</a>
-        </div>
+        <h1>SAT Lavandería Industrial</h1>
+        <p>Soluciones rápidas en Servicio Técnico y Química para profesionales.</p>
+        <a href="#contacto" class="btn-submit" style="width: auto; padding: 15px 40px; text-decoration: none;">Solicitar Información</a>
     </section>
 
-    <section id="servicios">
-        <h2 class="section-title">Soluciones 360º</h2>
-        <p class="section-subtitle">Cubrimos todas las necesidades de su planta de lavado</p>
+    <section id="servicios" style="padding: 80px 10%;">
+        <h2 style="text-align: center; color: var(--primary-blue); font-size: 2.5rem;">Nuestros Servicios</h2>
         <div class="grid">
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>S.A.T. Multimarca</h3>
-                <p>Reparación urgente de calandras, lavadoras industriales y secadoras. Mantenimiento preventivo para evitar paradas.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-vial"></i>
-                <h3>Sistemas de Dosificación</h3>
-                <p>Instalación de equipos automáticos y suministro de químicos de alto rendimiento para un blanco perfecto.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Auditoría Energética</h3>
-                <p>Reducimos sus costes de agua y gas optimizando cada ciclo de lavado. Lavandería inteligente.</p>
-            </div>
+            <div class="card"><i class="fas fa-tools" style="font-size: 3rem; color: var(--primary-blue);"></i><h3>SAT Urgente</h3><p>Reparación de maquinaria en menos de 24h.</p></div>
+            <div class="card"><i class="fas fa-flask" style="font-size: 3rem; color: var(--accent-green);"></i><h3>Química</h3><p>Dosificación automática y productos de alta eficiencia.</p></div>
+            <div class="card"><i class="fas fa-leaf" style="font-size: 3rem; color: #f1c40f;"></i><h3>Eficiencia</h3><p>Ahorro real en sus facturas de agua y energía.</p></div>
         </div>
     </section>
 
     <section id="contacto">
-        <div class="contact-wrapper">
-            <div class="info-box">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">¿Hablamos de su próximo proyecto?</h2>
-                <p style="margin-bottom: 30px;">Estamos en Málaga y damos cobertura a toda Andalucía. Respuesta técnica en menos de 24 horas.</p>
+        <div class="form-container">
+            <h2 style="text-align: center; margin-bottom: 30px;">Contacte con un Técnico</h2>
+            <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST">
+                <input type="text" name="name" class="form-control" placeholder="Nombre / Empresa" required>
+                <input type="email" name="email" class="form-control" placeholder="Email de contacto" required>
+                <input type="text" name="subject" class="form-control" placeholder="Servicio (Ej: Reparación Lavadora)" required>
+                <textarea name="message" class="form-control" style="height: 120px;" placeholder="Escriba su mensaje o teléfono..." required></textarea>
                 
-                <div class="info-item"><i class="fas fa-phone"></i> <strong>+34 693 95 05 56</strong></div>
-                <div class="info-item"><i class="fas fa-envelope"></i> <strong>info@2lineenergy.com</strong></div>
-                <div class="info-item"><i class="fas fa-map-marker-alt"></i> <strong>Málaga, Andalucía</strong></div>
-            </div>
-
-            <div class="form-container">
-                <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST">
-                    
-                    <div class="input-group">
-                        <label>Nombre o Empresa</label>
-                        <input type="text" name="name" class="form-control" placeholder="Ej: Hotel Paraíso" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Email de contacto</label>
-                        <input type="email" name="email" class="form-control" placeholder="tu@email.com" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Asunto / Servicio</label>
-                        <select name="subject" class="form-control">
-                            <option value="Servicio Tecnico Urgente">Servicio Técnico Urgente</option>
-                            <option value="Quimicos y Dosificacion">Químicos y Dosificación</option>
-                            <option value="Maquinaria y Eficiencia">Maquinaria y Eficiencia</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Mensaje o Teléfono</label>
-                        <textarea name="message" class="form-control" style="height: 120px;" placeholder="Indique su teléfono y breve descripción de la avería..." required></textarea>
-                    </div>
-                    
-                    <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia">
-                    
-                    <button type="submit" class="btn" style="background: var(--primary-blue); color: white; width: 100%;">ENVIAR SOLICITUD</button>
-                </form>
-            </div>
+                <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia">
+                
+                <button type="submit" class="btn-submit">Enviar Solicitud ahora</button>
+            </form>
         </div>
     </section>
 
@@ -258,8 +182,8 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer style="background: var(--dark-grey); color: white; text-align: center; padding: 40px;">
-        <p>&copy; 2026 2 Line Energy. Innovación en Lavandería Industrial.</p>
+    <footer style="background: var(--dark-grey); color: white; text-align: center; padding: 30px;">
+        <p>&copy; 2026 2 Line Energy. Servicio Técnico de Lavandería.</p>
     </footer>
 
     <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=y8e28zmw&n=n1.ratufa.io"></script>
