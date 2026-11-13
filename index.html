@@ -18,6 +18,7 @@
        - "sistemas automáticos dosificación multipump lavandería"
        - "venta montaje secadoras y calandras industriales Andalucía"
        - "servicio técnico Girbau Domus Fagor Primus Málaga"
+       - "errores averias lavadora industrial codigos pantalla"
     ==========================================================================
     -->
 
@@ -28,7 +29,7 @@
     <!-- SEO Meta Tags Primarios -->
     <title>Lavandería Industrial y Maquinaria en Málaga y Costa del Sol | 2 Line Energy</title>
     <meta name="description" content="Especialistas en lavandería industrial en Málaga y Andalucía: venta de maquinaria profesional, dosificación de químicos y SAT urgente 24h multimarca. Reduzca su coste por kg.">
-    <meta name="keywords" content="lavanderia industrial malaga, maquinaria lavanderia costa del sol, servicio tecnico lavanderia industrial andalucia, dosificacion quimicos lavanderia, reparacion lavadoras industriales hoteles, mantenimiento sat lavanderia 2 line energy">
+    <meta name="keywords" content="lavanderia industrial malaga, maquinaria lavanderia costa del sol, servicio tecnico lavanderia industrial andalucia, dosificacion quimicos lavanderia, reparacion lavadoras industriales hoteles, mantenimiento sat lavanderia 2 line energy, calculadora coste por kilo lavado">
     <meta name="author" content="2 Line Energy">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://2lineenergy.com/lavanderia/">
@@ -213,9 +214,21 @@
         .glow-card:hover {
             box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25);
         }
+
+        /* Estilo para control range personalizado de la calculadora */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #10B981;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
+            border: 2px solid white;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-bluelight selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-bluelight selection:text-white pb-20 sm:pb-0">
 
     <!-- =====================================================================
          TOPBAR TÉCNICA B2B (INFORMACIÓN CLAVE INMEDIATA)
@@ -247,7 +260,7 @@
     <!-- =====================================================================
          HEADER Y NAVEGACIÓN PRINCIPAL
          ===================================================================== -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Logo Corporativo -->
@@ -259,18 +272,21 @@
             </a>
 
             <!-- Navegación Desktop -->
-            <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-slate-700 tracking-wide" aria-label="Navegación principal">
-                <a href="#maquinaria" class="hover:text-brand-bluelight transition-colors">Maquinaria Industrial</a>
-                <a href="#quimicos" class="hover:text-brand-bluelight transition-colors">Químicos y Dosificación</a>
-                <a href="#servicio-tecnico" class="hover:text-brand-bluelight transition-colors">Servicio Técnico SAT</a>
-                <a href="#autoridad" class="hover:text-brand-bluelight transition-colors">Cobertura Andalucía</a>
+            <nav class="hidden lg:flex items-center gap-7 font-semibold text-sm text-slate-700 tracking-wide" aria-label="Navegación principal">
+                <a href="#maquinaria" class="hover:text-brand-bluelight transition-colors">Maquinaria</a>
+                <a href="#quimicos" class="hover:text-brand-bluelight transition-colors">Químicos & Dosificación</a>
+                <a href="#calculadora-ahorro" class="text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 hover:bg-emerald-100 transition-colors">
+                    <i class="fa-solid fa-calculator mr-1"></i> Calculadora €/kg
+                </a>
+                <a href="#servicio-tecnico" class="hover:text-brand-bluelight transition-colors">SAT Multimarca</a>
+                <a href="#autoridad" class="hover:text-brand-bluelight transition-colors">Cobertura</a>
                 <a href="#contacto" class="hover:text-brand-bluelight transition-colors">Contacto</a>
             </nav>
 
             <!-- Acciones Directas en Cabecera -->
             <div class="hidden sm:flex items-center gap-3">
-                <a href="#contacto" class="text-xs uppercase font-bold tracking-wider px-4 py-2.5 rounded-lg border border-slate-300 hover:border-brand-blue text-slate-700 hover:text-brand-blue transition">
-                    Auditoría €/kg
+                <a href="#calculadora-ahorro" class="text-xs uppercase font-bold tracking-wider px-3.5 py-2 rounded-lg border border-slate-300 hover:border-brand-blue text-slate-700 hover:text-brand-blue transition">
+                    Calcular Ahorro
                 </a>
                 <a href="tel:+34693950556" class="pulse-urgent inline-flex items-center gap-2 bg-brand-urgent hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-md transition transform active:scale-95">
                     <i class="fa-solid fa-wrench"></i>
@@ -288,6 +304,7 @@
         <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 shadow-xl space-y-4">
             <a href="#maquinaria" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Maquinaria Industrial</a>
             <a href="#quimicos" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Químicos y Dosificación Automática</a>
+            <a href="#calculadora-ahorro" class="block py-2 text-base font-semibold text-emerald-600 mobile-nav-link">Calculadora de Ahorro (€/kg)</a>
             <a href="#servicio-tecnico" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Servicio Técnico SAT Multimarca</a>
             <a href="#autoridad" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Cobertura Málaga y Costa del Sol</a>
             <a href="#contacto" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Formulario de Contacto B2B</a>
@@ -342,8 +359,8 @@
                                 <span class="text-xs text-slate-400">Ahorro en agua y energía</span>
                             </div>
                             <div class="border-l-2 border-brand-bluelight pl-3">
-                                <span class="block text-xl font-bold font-heading text-white">24 / 7</span>
-                                <span class="text-xs text-slate-400">Asistencia técnica de guardia</span>
+                                <span class="block text-xl font-bold font-heading text-white">&lt; 3 Horas</span>
+                                <span class="text-xs text-slate-400">Respuesta en Costa del Sol</span>
                             </div>
                             <div class="border-l-2 border-amber-400 pl-3 col-span-2 sm:col-span-1">
                                 <span class="block text-xl font-bold font-heading text-white">Multimarca</span>
@@ -353,9 +370,9 @@
 
                         <!-- Doble Llamada a la Acción (CTAs Principales) -->
                         <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#contacto" class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base uppercase tracking-wider">
-                                <i class="fa-solid fa-chart-pie"></i>
-                                <span>Solicitar estudio de optimización de lavado</span>
+                            <a href="#calculadora-ahorro" class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base uppercase tracking-wider">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Calcular mi ahorro de lavado</span>
                             </a>
                             <a href="tel:+34693950556" class="inline-flex items-center justify-center gap-3 bg-brand-urgent hover:bg-red-700 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-red-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base uppercase tracking-wider">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
@@ -440,10 +457,120 @@
                         </div>
                         <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Paradas críticas en picos hoteleros</h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Una lavadora de 60 kg detenida en pleno verano en Marbella o Fuengirola es inasumible. Nuestro servicio técnico dispone de stock de recambios y respuesta prioritaria en menos de 24 horas.
+                            Una lavadora de 60 kg detenida en pleno verano en Marbella o Fuengirola es inasumible. Nuestro servicio técnico dispone de stock de recambios y respuesta prioritaria en menos de 3 horas.
                         </p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             CALCULADORA INTERACTIVA DE AHORRO DE COSTE POR KILO (€/kg) - LEAD MAGNET CRO
+             ===================================================================== -->
+        <section id="calculadora-ahorro" class="py-20 bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
+                        <i class="fa-solid fa-coins"></i> Herramienta Interactiva de Rentabilidad
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold mt-3">
+                        Calcule el Ahorro Potencial de su Planta de Lavado
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2">
+                        Indique los kilos de ropa procesados al mes para estimar el impacto financiero de optimizar curvas térmicas y dosificación de químicos con 2 Line Energy.
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-10 rounded-3xl shadow-2xl">
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Controles de la Calculadora -->
+                        <div class="lg:col-span-7 space-y-6">
+                            
+                            <!-- Slider de Kilos -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label for="kgSlider" class="text-sm font-bold uppercase tracking-wider text-slate-200">
+                                        Kilos lavados al mes:
+                                    </label>
+                                    <span class="text-2xl font-bold font-heading text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-lg" id="kgValueDisplay">
+                                        15.000 kg
+                                    </span>
+                                </div>
+                                <input type="range" id="kgSlider" min="2000" max="60000" step="1000" value="15000" 
+                                       class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                                
+                                <!-- Presets Rápidos -->
+                                <div class="flex flex-wrap gap-2 mt-3 text-xs">
+                                    <button type="button" onclick="setKilos(5000)" class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 transition text-slate-300">
+                                        5.000 kg (Boutique)
+                                    </button>
+                                    <button type="button" onclick="setKilos(15000)" class="px-2.5 py-1 rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-semibold">
+                                        15.000 kg (Hotel 4*)
+                                    </button>
+                                    <button type="button" onclick="setKilos(35000)" class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 transition text-slate-300">
+                                        35.000 kg (Resort / OPL)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Coste actual estimado -->
+                            <div>
+                                <label for="costPerKgInput" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                                    Coste estimado actual (€/kg lavado):
+                                </label>
+                                <div class="flex items-center gap-3">
+                                    <select id="costPerKgInput" class="bg-slate-800 text-white border border-slate-600 rounded-xl px-4 py-2.5 text-sm w-full outline-none focus:border-emerald-400">
+                                        <option value="0.28" selected>0,28 €/kg (Promedio estándar hotelero / OPL)</option>
+                                        <option value="0.32">0,32 €/kg (Consumo elevado de energía o cal alta)</option>
+                                        <option value="0.24">0,24 €/kg (Instalación semi-optimizada)</option>
+                                    </select>
+                                </div>
+                                <span class="text-[11px] text-slate-400 mt-1 block">Incluye costes combinados de electricidad, gas/vapor, agua y químicos.</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Panel de Resultados de Ahorro -->
+                        <div class="lg:col-span-5 bg-gradient-to-b from-slate-900/90 to-brand-navy/95 p-6 rounded-2xl border border-emerald-500/40 text-center space-y-4">
+                            
+                            <span class="text-xs uppercase font-bold tracking-widest text-emerald-400 block">
+                                Estimación de Reducción Anual
+                            </span>
+
+                            <div class="py-2">
+                                <span class="text-4xl sm:text-5xl font-extrabold font-heading text-white tracking-tight" id="savingEurosDisplay">
+                                    11.088 €
+                                </span>
+                                <span class="block text-xs text-emerald-400 font-semibold mt-1">
+                                    Ahorro estimado anual (~22% reducción)
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 text-left pt-3 border-t border-slate-800 text-xs">
+                                <div>
+                                    <span class="block text-slate-400">Coste actual/año:</span>
+                                    <span class="font-bold text-slate-200" id="currentAnnualCost">50.400 €</span>
+                                </div>
+                                <div>
+                                    <span class="block text-slate-400">Coste optimizado:</span>
+                                    <span class="font-bold text-emerald-300" id="optimizedAnnualCost">39.312 €</span>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="transferCalculationToForm()" class="w-full py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-bold text-sm uppercase tracking-wider transition shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <span>Solicitar este Ahorro In-Situ</span>
+                            </button>
+                            <span class="text-[11px] text-slate-400 block">Auditoría presencial gratuita en cualquier punto de Málaga y Costa del Sol.</span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -577,7 +704,7 @@
                                 </li>
                                 <li class="flex items-center gap-2.5">
                                     <i class="fa-solid fa-check text-amber-500"></i>
-                                    <span>Tiempos de respuesta reducidos en toda la Costa del Sol.</span>
+                                    <span>Tiempos de respuesta &lt; 3h en toda la Costa del Sol.</span>
                                 </li>
                             </ul>
                         </div>
@@ -593,9 +720,89 @@
         </section>
 
         <!-- =====================================================================
+             SECCIÓN DE AVERÍAS FRECUENTES Y RECAMBIOS POR MARCA (SEO MAGNET B2B)
+             ===================================================================== -->
+        <section class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold text-brand-urgent uppercase tracking-widest">Diagnóstico Técnico Rápido</span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-brand-navy mt-2">
+                        Resolución de Averías y Errores Habituales en Maquinaria Industrial
+                    </h2>
+                    <p class="text-slate-600 text-sm mt-2">
+                        Nuestras unidades móviles en Málaga disponen de recambios originales para resolver in-situ los fallos más críticos:
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Girbau -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <span class="text-xs font-bold text-brand-blue uppercase">GIRBAU SAT</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-1 mb-2">Series HS / MS / RMS</h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li>• Alarmas de variador de frecuencia (ALM / INV).</li>
+                            <li>• Bloqueo en sistema de desagüe o cierre de puerta.</li>
+                            <li>• Sustitución de retén y rodamientos de tambor.</li>
+                        </ul>
+                        <a href="tel:+34693950556" class="text-xs font-bold text-brand-urgent hover:underline">Consultar técnico Girbau &rarr;</a>
+                    </div>
+
+                    <!-- Domus -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <span class="text-xs font-bold text-brand-blue uppercase">DOMUS SAT</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-1 mb-2">Touch Plus DHS / DTT</h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li>• Fallo de calentamiento (resistencias / electroválvula vapor).</li>
+                            <li>• Error de desequilibrio y amortiguación.</li>
+                            <li>• Calibración de pantalla táctil y firmware.</li>
+                        </ul>
+                        <a href="tel:+34693950556" class="text-xs font-bold text-brand-urgent hover:underline">Consultar técnico Domus &rarr;</a>
+                    </div>
+
+                    <!-- Fagor -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <span class="text-xs font-bold text-brand-blue uppercase">FAGOR INDUSTRIAL</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-1 mb-2">Gamas LAP / LA / SR</h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li>• Error de nivel de agua y presostato analógico.</li>
+                            <li>• Fallo de comunicación entre placas de control.</li>
+                            <li>• Quemadores de secadoras a gas y termostatos.</li>
+                        </ul>
+                        <a href="tel:+34693950556" class="text-xs font-bold text-brand-urgent hover:underline">Consultar técnico Fagor &rarr;</a>
+                    </div>
+
+                    <!-- Primus / Electrolux -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <span class="text-xs font-bold text-brand-blue uppercase">PRIMUS & ELECTROLUX</span>
+                        <h4 class="font-bold text-slate-800 text-base mt-1 mb-2">XControl & Clarus Control</h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-4">
+                            <li>• Errores de dosificación y bombas peristálticas.</li>
+                            <li>• Bandas de planchado y teflón en calandras.</li>
+                            <li>• Mantenimiento preventivo anual certificado.</li>
+                        </ul>
+                        <a href="tel:+34693950556" class="text-xs font-bold text-brand-urgent hover:underline">Consultar recambios &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center bg-brand-navy text-white p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-left">
+                        <span class="font-bold text-sm block">¿Su pantalla muestra un código de error desconocido?</span>
+                        <span class="text-xs text-slate-300">Envíenos una fotografía por WhatsApp y le indicaremos la causa de inmediato.</span>
+                    </div>
+                    <a href="https://wa.me/34693950556?text=Hola,%20tengo%20un%20código%20de%20error%20en%20mi%20lavadora/secadora%20industrial:%20" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider shrink-0 transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Enviar foto del error</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
              BLOQUE DE AUTORIDAD LOCAL & COBERTURA REGIONAL (MÁLAGA Y ANDALUCÍA)
              ===================================================================== -->
-        <section id="autoridad" class="py-20 bg-white">
+        <section id="autoridad" class="py-20 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     
@@ -614,7 +821,7 @@
                         </p>
 
                         <!-- Zonas de Cobertura Rápida -->
-                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                             <h3 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">
                                 Rutas diarias de asistencia técnica y suministro:
                             </h3>
@@ -633,15 +840,15 @@
 
                         <!-- Métricas de Confianza -->
                         <div class="grid grid-cols-3 gap-4 pt-2">
-                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-center p-3 rounded-xl bg-white border border-slate-200">
                                 <span class="block text-2xl font-extrabold font-heading text-brand-blue">+15</span>
                                 <span class="text-xs text-slate-500 font-medium">Años de experiencia</span>
                             </div>
-                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                <span class="block text-2xl font-extrabold font-heading text-brand-blue">&lt; 24h</span>
+                            <div class="text-center p-3 rounded-xl bg-white border border-slate-200">
+                                <span class="block text-2xl font-extrabold font-heading text-brand-blue">&lt; 3h</span>
                                 <span class="text-xs text-slate-500 font-medium">Respuesta técnica</span>
                             </div>
-                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="text-center p-3 rounded-xl bg-white border border-slate-200">
                                 <span class="block text-2xl font-extrabold font-heading text-brand-blue">100%</span>
                                 <span class="text-xs text-slate-500 font-medium">Garantía oficial</span>
                             </div>
@@ -673,12 +880,12 @@
         <!-- =====================================================================
              MARCAS COMPATIBLES (SEÑALES DE CONFIANZA TÉCNICA)
              ===================================================================== -->
-        <section class="py-12 bg-slate-50 border-y border-slate-200">
+        <section class="py-12 bg-white border-y border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <p class="text-center text-xs font-bold uppercase tracking-wider text-slate-500 mb-8">
                     Especialistas multimarca en reparación y recambios para los principales fabricantes
                 </p>
-                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-14 text-slate-500 font-heading font-bold text-lg sm:text-xl">
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-14 text-slate-400 font-heading font-bold text-lg sm:text-xl">
                     <span class="hover:text-brand-blue transition">GIRBAU</span>
                     <span class="hover:text-brand-blue transition">DOMUS</span>
                     <span class="hover:text-brand-blue transition">FAGOR INDUSTRIAL</span>
@@ -693,7 +900,7 @@
         <!-- =====================================================================
              PREGUNTAS FRECUENTES (FAQ PARA SEO Y RESUELTA DE DUDAS B2B)
              ===================================================================== -->
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-slate-50">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-14">
                     <span class="text-xs font-bold text-brand-bluelight uppercase tracking-widest">Dudas Frecuentes</span>
@@ -703,17 +910,17 @@
                 </div>
 
                 <div class="space-y-4">
-                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                    <details class="group bg-white p-6 rounded-2xl border border-slate-200 transition shadow-sm">
                         <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
                             <span>¿Cuál es el tiempo de respuesta para averías en hoteles de la Costa del Sol?</span>
                             <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                         </summary>
                         <p class="mt-4 text-slate-600 text-sm leading-relaxed">
-                            Disponemos de equipo de guardia y vehículos de asistencia técnica con base en Málaga para atender urgencias en hoteles y lavanderías en Marbella, Fuengirola, Estepona y toda la Costa del Sol, priorizando incidencias que detienen la línea de lavado.
+                            Disponemos de equipo de guardia y vehículos de asistencia técnica con base en Málaga para atender urgencias en hoteles y lavanderías en Marbella, Fuengirola, Estepona y toda la Costa del Sol, priorizando incidencias con un tiempo medio de llegada inferior a 3 horas en averías que detienen la producción.
                         </p>
                     </details>
 
-                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                    <details class="group bg-white p-6 rounded-2xl border border-slate-200 transition shadow-sm">
                         <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
                             <span>¿Cómo se realiza el estudio de optimización de coste por kilo (€/kg)?</span>
                             <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
@@ -723,7 +930,7 @@
                         </p>
                     </details>
 
-                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                    <details class="group bg-white p-6 rounded-2xl border border-slate-200 transition shadow-sm">
                         <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
                             <span>¿Suministran e instalan los equipos de dosificación de químicos?</span>
                             <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
@@ -807,7 +1014,7 @@
                             </p>
 
                             <!-- Endpoint integrado: Ratufa / Formspree compatible con GitHub Pages -->
-                            <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST" class="space-y-5">
+                            <form id="contactForm" action="https://n1.ratufa.io/forms/y8e28zmw" method="POST" class="space-y-5">
                                 
                                 <div class="grid sm:grid-cols-2 gap-4">
                                     <!-- Nombre Completo -->
@@ -930,7 +1137,7 @@
                         <li><a href="#maquinaria" class="hover:text-white transition">Maquinaria Industrial (Girbau, Domus, Fagor)</a></li>
                         <li><a href="#quimicos" class="hover:text-white transition">Dosificación Automática Multipump</a></li>
                         <li><a href="#servicio-tecnico" class="hover:text-white transition">SAT Urgente 24 Horas</a></li>
-                        <li><a href="#contacto" class="hover:text-white transition">Auditoría de Coste por Kilo (€/kg)</a></li>
+                        <li><a href="#calculadora-ahorro" class="hover:text-white transition">Calculadora de Coste por Kilo (€/kg)</a></li>
                     </ul>
                 </div>
 
@@ -961,12 +1168,28 @@
     </footer>
 
     <!-- =====================================================================
-         BOTÓN FLOTANTE DE WHATSAPP BUSINESS (CONVERSIÓN DIRECTA MOBILE/DESKTOP)
+         BARRA FIJA DE ACCIÓN RÁPIDA PARA MÓVILES (MÁXIMA CONVERSIÓN EN EMERGENCIAS)
+         ===================================================================== -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-brand-navy/95 backdrop-blur-md border-t border-slate-700 p-2.5 shadow-2xl flex items-center gap-2">
+        <a href="tel:+34693950556" class="flex-1 bg-brand-urgent hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
+            <i class="fa-solid fa-phone-volume text-sm animate-bounce"></i>
+            <span>Llamar SAT 24h</span>
+        </a>
+        <a href="https://wa.me/34693950556?text=Hola%202%20Line%20Energy,%20necesito%20asistencia%20técnica%20o%20información%20para%20mi%20lavandería%20industrial" 
+           target="_blank" 
+           class="flex-1 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider py-3 px-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>WhatsApp SAT</span>
+        </a>
+    </div>
+
+    <!-- =====================================================================
+         BOTÓN FLOTANTE DE WHATSAPP BUSINESS EN ESCRITORIO
          ===================================================================== -->
     <a href="https://wa.me/34693950556?text=Hola%202%20Line%20Energy,%20necesito%20asistencia%20técnica%20o%20información%20para%20mi%20lavandería%20industrial" 
        target="_blank" 
        rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group"
+       class="hidden sm:flex fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group"
        aria-label="Contactar por WhatsApp Business con Servicio Técnico">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
         <!-- Tooltip informativo en desktop para aumentar CTR -->
@@ -976,7 +1199,7 @@
     </a>
 
     <!-- =====================================================================
-         SCRIPTS MÍNIMOS PARA INTERACCIÓN Y VALIDACIÓN SIN DEPENDENCIAS BACKEND
+         SCRIPTS: MENÚ MÓVIL Y CALCULADORA DINÁMICA DE AHORRO
          ===================================================================== -->
     <script>
         // Control de menú móvil
@@ -989,12 +1212,79 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Cerrar menú al pulsar cualquier enlace
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
             });
+        }
+
+        // LÓGICA DE LA CALCULADORA DE COSTE POR KILO
+        const kgSlider = document.getElementById('kgSlider');
+        const costPerKgInput = document.getElementById('costPerKgInput');
+        const kgValueDisplay = document.getElementById('kgValueDisplay');
+        const savingEurosDisplay = document.getElementById('savingEurosDisplay');
+        const currentAnnualCost = document.getElementById('currentAnnualCost');
+        const optimizedAnnualCost = document.getElementById('optimizedAnnualCost');
+
+        function updateSavings() {
+            const kgPerMonth = parseFloat(kgSlider.value);
+            const costPerKg = parseFloat(costPerKgInput.value);
+            
+            // Kilos formateados con separador de miles
+            kgValueDisplay.textContent = kgPerMonth.toLocaleString('es-ES') + ' kg';
+
+            // Cálculos anuales
+            const totalKgYear = kgPerMonth * 12;
+            const annualCost = totalKgYear * costPerKg;
+            
+            // Reducción media estimada del 22% por optimización de curvas, vapor y dosificación multipump
+            const savingRatio = 0.22;
+            const annualSavings = annualCost * savingRatio;
+            const optimizedCost = annualCost - annualSavings;
+
+            // Actualizar vista
+            savingEurosDisplay.textContent = Math.round(annualSavings).toLocaleString('es-ES') + ' €';
+            currentAnnualCost.textContent = Math.round(annualCost).toLocaleString('es-ES') + ' €';
+            optimizedAnnualCost.textContent = Math.round(optimizedCost).toLocaleString('es-ES') + ' €';
+        }
+
+        function setKilos(val) {
+            kgSlider.value = val;
+            updateSavings();
+        }
+
+        if (kgSlider && costPerKgInput) {
+            kgSlider.addEventListener('input', updateSavings);
+            costPerKgInput.addEventListener('change', updateSavings);
+            updateSavings();
+        }
+
+        // Conectar la calculadora directamente con el formulario de contacto
+        function transferCalculationToForm() {
+            const kg = parseFloat(kgSlider.value).toLocaleString('es-ES');
+            const saving = savingEurosDisplay.textContent;
+            
+            const mensajeField = document.getElementById('mensaje');
+            const servicioField = document.getElementById('servicio_requerido');
+
+            if (servicioField) {
+                servicioField.value = 'Estudio de Optimización de Costes (€/kg)';
+            }
+
+            if (mensajeField) {
+                mensajeField.value = `Interesado en estudio de optimización de lavado. Estimación de volumen: ${kg} kg/mes. Ahorro potencial calculado: ${saving}/año. Solicito auditoría presencial sin compromiso.`;
+            }
+
+            // Scroll suave hacia el formulario
+            const formSection = document.getElementById('contacto');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+                // Enfoque visual al formulario
+                setTimeout(() => {
+                    document.getElementById('nombre')?.focus();
+                }, 600);
+            }
         }
     </script>
 
