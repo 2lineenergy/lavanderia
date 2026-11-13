@@ -1,204 +1,1004 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
+    <!-- 
+    ==========================================================================
+    ESTRATEGIA SEO ON-PAGE & KEYWORDS OBJETIVO - 2 LINE ENERGY
+    ==========================================================================
+    1. Keyword Principal (Transaccional/Geolocalizada):
+       - "lavandería industrial Málaga" / "servicio técnico lavandería industrial Costa del Sol"
+    2. Keywords Secundarias B2B (Servicios y Maquinaria):
+       - "maquinaria lavandería industrial Andalucía"
+       - "reparación lavadoras industriales Málaga"
+       - "dosificación de químicos lavandería industrial"
+       - "mantenimiento lavanderías hoteles Costa del Sol"
+       - "coste por kilo lavado optimización lavandería"
+    3. Long-tail & Intención de Búsqueda de Alta Conversión:
+       - "asistencia técnica urgente lavanderías industriales Málaga"
+       - "sistemas automáticos dosificación multipump lavandería"
+       - "venta montaje secadoras y calandras industriales Andalucía"
+       - "servicio técnico Girbau Domus Fagor Primus Málaga"
+    ==========================================================================
+    -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2 Line Energy | SAT Lavandería Industrial Andalucía | Químicos y Eficiencia</title>
-    <meta name="description" content="Líderes en servicio técnico de lavandería industrial en Málaga, Sevilla, Cádiz y toda Andalucía. Reparación urgente 24h, dosificación química y ahorro energético.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Meta Tags Primarios -->
+    <title>Lavandería Industrial y Maquinaria en Málaga y Costa del Sol | 2 Line Energy</title>
+    <meta name="description" content="Especialistas en lavandería industrial en Málaga y Andalucía: venta de maquinaria profesional, dosificación de químicos y SAT urgente 24h multimarca. Reduzca su coste por kg.">
+    <meta name="keywords" content="lavanderia industrial malaga, maquinaria lavanderia costa del sol, servicio tecnico lavanderia industrial andalucia, dosificacion quimicos lavanderia, reparacion lavadoras industriales hoteles, mantenimiento sat lavanderia 2 line energy">
+    <meta name="author" content="2 Line Energy">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://2lineenergy.com/lavanderia/">
+
+    <!-- Geo-Meta Tags para SEO Local (Málaga & Costa del Sol) -->
+    <meta name="geo.region" content="ES-AN">
+    <meta name="geo.placename" content="Málaga">
+    <meta name="geo.position" content="36.721273;-4.421398">
+    <meta name="ICBM" content="36.721273, -4.421398">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:url" content="https://2lineenergy.com/lavanderia/">
+    <meta property="og:site_name" content="2 Line Energy - Lavandería Industrial">
+    <meta property="og:title" content="Lavandería Industrial y Maquinaria en Málaga y Costa del Sol | 2 Line Energy">
+    <meta property="og:description" content="Venta y montaje de maquinaria industrial, sistemas de dosificación química y Servicio Técnico Urgente para hoteles, residencias y lavanderías en Andalucía.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1545173168-9f1947eeba01?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Instalación y maquinaria de lavandería industrial 2 Line Energy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lavandería Industrial y Maquinaria en Málaga y Costa del Sol | 2 Line Energy">
+    <meta name="twitter:description" content="SAT urgente multimarca, venta de maquinaria industrial y optimización de coste por kg en Málaga y Andalucía.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1545173168-9f1947eeba01?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/png" href="img/logo_2lineenergy.png">
+    <link rel="apple-touch-icon" href="img/logo_2lineenergy.png">
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS (CDN para despliegue instantáneo y ligero en GitHub Pages) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B3B60',       // Azul industrial corporativo
+                            bluelight: '#0284C7',  // Azul cian técnico
+                            navy: '#061C30',       // Marino muy oscuro para contrastes B2B
+                            slate: '#1E293B',      // Gris técnico de lectura
+                            amber: '#F59E0B',      // Acento de atención
+                            emerald: '#10B981',    // Acento ecológico / ahorro
+                            urgent: '#DC2626'      // Rojo urgencias técnicas
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema.org JSON-LD para Rich Snippets en Google (LocalBusiness & Service) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://2lineenergy.com/lavanderia/#localbusiness",
+          "name": "2 Line Energy - Lavandería Industrial y Maquinaria",
+          "image": "https://2lineenergy.com/lavanderia/img/logo_2lineenergy.png",
+          "url": "https://2lineenergy.com/lavanderia/",
+          "telephone": "+34693950556",
+          "email": "info@2lineenergy.com",
+          "priceRange": "€€€",
+          "description": "Servicio técnico integral de lavandería industrial, venta y mantenimiento de maquinaria, y dosificación de productos químicos en Málaga, Costa del Sol y Andalucía.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Málaga",
+            "addressRegion": "Málaga / Andalucía",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 36.721273,
+            "longitude": -4.421398
+          },
+          "areaServed": [
+            { "@type": "AdministrativeArea", "name": "Málaga" },
+            { "@type": "AdministrativeArea", "name": "Costa del Sol" },
+            { "@type": "AdministrativeArea", "name": "Marbella" },
+            { "@type": "AdministrativeArea", "name": "Estepona" },
+            { "@type": "AdministrativeArea", "name": "Fuengirola" },
+            { "@type": "AdministrativeArea", "name": "Torremolinos" },
+            { "@type": "AdministrativeArea", "name": "Sevilla" },
+            { "@type": "AdministrativeArea", "name": "Cádiz" },
+            { "@type": "AdministrativeArea", "name": "Andalucía" }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59",
+              "description": "Servicio Técnico de Guardia Urgencias 24h"
+            }
+          ],
+          "sameAs": [
+            "https://2lineenergy.com"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://2lineenergy.com/lavanderia/#service-sat",
+          "name": "Servicio Técnico SAT Lavandería Industrial",
+          "provider": { "@id": "https://2lineenergy.com/lavanderia/#localbusiness" },
+          "serviceType": "Reparación y mantenimiento de maquinaria de lavandería industrial",
+          "areaServed": "Málaga, Costa del Sol y Andalucía"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://2lineenergy.com/lavanderia/#service-quimicos",
+          "name": "Sistemas de Dosificación y Químicos Profesionales",
+          "provider": { "@id": "https://2lineenergy.com/lavanderia/#localbusiness" },
+          "serviceType": "Instalación de bombas multipump y química industrial de lavado"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://2lineenergy.com/lavanderia/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el tiempo de respuesta para averías urgentes en hoteles de la Costa del Sol?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contamos con técnicos de guardia permanentes en la provincia de Málaga y Costa del Sol (Marbella, Fuengirola, Benalmádena, Estepona), ofreciendo respuesta prioritaria urgente para evitar interrupciones en la producción de lencería hotelera."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo ayuda 2 Line Energy a reducir el coste por kilo (€/kg) lavado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Realizamos una auditoría técnica completa que ajusta la curva de temperatura, los tiempos de centrifugado, la recuperación térmica y la dosificación milimétrica de químicos multipump, reduciendo consumos de agua, gas/electricidad y re-lavados hasta un 28%."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Con qué marcas de maquinaria industrial trabajan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ofrecemos asistencia técnica multimarca y recambios originales para fabricantes líderes como Girbau, Domus, Fagor Industrial, Primus, Electrolux Professional, Danube, Grandimpianti y Kannegiesser."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <style>
-        :root {
-            --primary-blue: #004a99;
-            --accent-green: #2ecc71;
-            --urgent-red: #e74c3c;
-            --dark-grey: #2c3e50;
-            --light-bg: #f4f7f6;
-            --white: #ffffff;
+        /* Animación suave para botón de urgencia */
+        @keyframes pulseAlert {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark-grey); background-color: var(--white); scroll-behavior: smooth; }
-
-        /* Navegación Mejorada */
-        nav { 
-            background: var(--white); 
-            padding: 0.5rem 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000;
-            min-height: 90px;
+        .pulse-urgent {
+            animation: pulseAlert 2.2s infinite;
         }
-
-        .logo-container { display: flex; align-items: center; }
-        .logo-img { max-height: 70px; width: auto; display: block; }
-
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark-grey); font-weight: 600; transition: 0.3s; font-size: 0.85rem; text-transform: uppercase; }
-        .nav-links a:hover { color: var(--primary-blue); }
-
-        .btn-urgent { background: var(--urgent-red); color: white !important; padding: 10px 18px; border-radius: 8px; animation: pulse 2s infinite; text-align: center; }
-
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); } 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } }
-
-        /* Hero */
-        .hero { 
-            background: linear-gradient(rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.85)), 
-                        url('https://images.unsplash.com/photo-1545173168-9f1947eeba01?q=80&w=2070') center/cover; 
-            min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 40px 20px; 
-        }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; margin-bottom: 1.5rem; max-width: 1100px; line-height: 1.1; }
-        .hero p { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 850px; margin-bottom: 2.5rem; opacity: 0.9; }
-
-        .btn-cta { background: var(--accent-green); color: white; padding: 18px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; text-transform: uppercase; box-shadow: 0 10px 20px rgba(46,204,113,0.3); }
-        .btn-cta:hover { transform: translateY(-3px); background: #27ae60; }
-
-        /* Servicios */
-        section { padding: 100px 8%; }
-        .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--primary-blue); font-weight: 700; text-align: center; margin-bottom: 20px; }
-        .section-desc { text-align: center; max-width: 850px; margin: 0 auto 60px; font-size: 1.1rem; color: #666; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { padding: 40px; background: white; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; border-top: 5px solid var(--accent-green); border-bottom: 1px solid #eee; }
-        .card:hover { transform: translateY(-10px); border-top-color: var(--primary-blue); }
-        .card i { font-size: 3.5rem; color: var(--primary-blue); margin-bottom: 25px; }
-
-        /* Feature Box */
-        .feature-box { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 40px; }
-        .feature-text h3 { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; line-height: 1.2; }
-        .feature-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; }
-
-        /* Contacto */
-        #contacto { background: var(--light-bg); border-radius: 60px 60px 0 0; }
-        .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
-        .form-card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-        .form-control { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; margin-bottom: 15px; font-family: inherit; font-size: 1rem; transition: 0.3s; }
-        .form-control:focus { border-color: var(--primary-blue); outline: none; }
-        .btn-submit { background: var(--primary-blue); color: white; width: 100%; padding: 20px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 1rem; }
-        .btn-submit:hover { background: var(--dark-grey); }
-
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 15px 30px rgba(37,211,102,0.4); text-decoration: none; transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); }
-
-        /* Ajustes Móvil */
-        @media (max-width: 992px) { 
-            nav { flex-direction: column; height: auto; padding: 15px; }
-            .logo-container { margin-bottom: 15px; }
-            .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; gap: 10px; }
-            .nav-links a { margin: 5px; font-size: 0.8rem; }
-            .feature-box, .contact-container { grid-template-columns: 1fr; } 
-            section { padding: 60px 6%; }
+        
+        /* Floating badge glow */
+        .glow-card:hover {
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25);
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-bluelight selection:text-white">
 
-    <nav>
-        <div class="logo-container">
-            <img src="img/logo_2lineenergy.png" alt="2 Line Energy" class="logo-img" onerror="this.src='https://2lineenergy.com/lavanderia/img/logo_2lineenergy.png'">
-        </div>
-        <div class="nav-links">
-            <a href="#servicios">Servicios</a>
-            <a href="#nosotros">Experiencia</a>
-            <a href="#contacto" class="btn-urgent">URGENCIAS SAT 24H</a>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <h1>Potencia y Eficiencia para su Lavandería Industrial</h1>
-        <p>Servicio Técnico Multimarca, Soluciones Químicas y Auditoría Energética en Málaga, Sevilla, Cádiz y toda Andalucía.</p>
-        <a href="#contacto" class="btn-cta">SOLICITAR AUDITORÍA GRATUITA</a>
-    </section>
-
-    <section id="servicios">
-        <h2 class="section-title">Soluciones Integrales para Plantas de Lavado</h2>
-        <p class="section-desc">Especialistas en Hoteles, Residencias y Lavanderías Industriales que no pueden permitirse una parada técnica.</p>
-
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-tools"></i>
-                <h3>SAT Industrial Especializado</h3>
-                <p>Reparación de lavadoras de barrera, secadoras y calandras (Girbau, Primus, Domus, Fagor, Electrolux). Stock de recambios para asistencia inmediata.</p>
+    <!-- =====================================================================
+         TOPBAR TÉCNICA B2B (INFORMACIÓN CLAVE INMEDIATA)
+         ===================================================================== -->
+    <aside class="bg-brand-navy border-b border-slate-800 text-xs text-slate-300 py-2.5 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    SAT Activo en Málaga y Costa del Sol
+                </span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-industry text-brand-bluelight mr-1"></i> Especialistas en Hoteles, Residencias y Lavanderías OPL</span>
             </div>
-            <div class="card">
-                <i class="fas fa-vial"></i>
-                <h3>Química de Alto Rendimiento</h3>
-                <p>Dosificación automática exacta. Productos certificados que garantizan blancura total, desinfección y máximo cuidado de las fibras textiles.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Optimización de Costes</h3>
-                <p>Reducimos su huella hídrica y energética. Ajustamos ciclos y procesos para ahorrar hasta un 30% en sus facturas de suministros.</p>
+            <div class="flex items-center gap-5 ml-auto">
+                <a href="tel:+34693950556" class="hover:text-white transition flex items-center gap-1.5 font-semibold text-slate-200">
+                    <i class="fa-solid fa-phone text-brand-bluelight"></i>
+                    <span>693 95 05 56</span>
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="mailto:info@2lineenergy.com" class="hover:text-white transition hidden sm:flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-brand-bluelight"></i>
+                    <span>info@2lineenergy.com</span>
+                </a>
             </div>
         </div>
-    </section>
+    </aside>
 
-    <section id="nosotros" style="background-color: #fff;">
-        <div class="feature-box">
-            <div class="feature-text">
-                <h3>Su Socio Tecnológico en Andalucía</h3>
-                <p>En <strong>2 Line Energy</strong> convertimos su lavandería en un centro de alta eficiencia. Nuestra experiencia técnica nos permite diagnosticar donde otros solo parchean.</p>
-                <p><i class="fas fa-check-circle" style="color:var(--accent-green);"></i> <strong>Respuesta Prioritaria:</strong> Técnicos en ruta permanente por toda la comunidad andaluza.</p>
-                <p><i class="fas fa-check-circle" style="color:var(--accent-green);"></i> <strong>Marcas:</strong> Conocimiento profundo de maquinaria nacional e internacional.</p>
-                <p><i class="fas fa-check-circle" style="color:var(--accent-green);"></i> <strong>Sostenibilidad:</strong> Químicos biodegradables y ahorro de agua real.</p>
+    <!-- =====================================================================
+         HEADER Y NAVEGACIÓN PRINCIPAL
+         ===================================================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo Corporativo -->
+            <a href="#inicio" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-brand-bluelight rounded-lg p-1" aria-label="2 Line Energy - Inicio">
+                <img src="img/logo_2lineenergy.png" 
+                     alt="2 Line Energy - Soluciones de Lavandería Industrial" 
+                     class="h-12 w-auto object-contain"
+                     onerror="this.src='https://2lineenergy.com/lavanderia/img/logo_2lineenergy.png'">
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-slate-700 tracking-wide" aria-label="Navegación principal">
+                <a href="#maquinaria" class="hover:text-brand-bluelight transition-colors">Maquinaria Industrial</a>
+                <a href="#quimicos" class="hover:text-brand-bluelight transition-colors">Químicos y Dosificación</a>
+                <a href="#servicio-tecnico" class="hover:text-brand-bluelight transition-colors">Servicio Técnico SAT</a>
+                <a href="#autoridad" class="hover:text-brand-bluelight transition-colors">Cobertura Andalucía</a>
+                <a href="#contacto" class="hover:text-brand-bluelight transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Acciones Directas en Cabecera -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#contacto" class="text-xs uppercase font-bold tracking-wider px-4 py-2.5 rounded-lg border border-slate-300 hover:border-brand-blue text-slate-700 hover:text-brand-blue transition">
+                    Auditoría €/kg
+                </a>
+                <a href="tel:+34693950556" class="pulse-urgent inline-flex items-center gap-2 bg-brand-urgent hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-md transition transform active:scale-95">
+                    <i class="fa-solid fa-wrench"></i>
+                    <span>SAT Averías 24h</span>
+                </a>
             </div>
-            <div class="feature-img">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600" alt="SAT Lavanderia Profesional" style="width:100%; border-radius:30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+
+            <!-- Botón Menú Móvil -->
+            <button id="mobileMenuBtn" type="button" class="lg:hidden p-2 text-slate-700 hover:text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-bluelight rounded-lg" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 shadow-xl space-y-4">
+            <a href="#maquinaria" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Maquinaria Industrial</a>
+            <a href="#quimicos" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Químicos y Dosificación Automática</a>
+            <a href="#servicio-tecnico" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Servicio Técnico SAT Multimarca</a>
+            <a href="#autoridad" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Cobertura Málaga y Costa del Sol</a>
+            <a href="#contacto" class="block py-2 text-base font-semibold text-slate-800 hover:text-brand-bluelight mobile-nav-link">Formulario de Contacto B2B</a>
+            <div class="pt-4 border-t border-slate-200 flex flex-col gap-3">
+                <a href="tel:+34693950556" class="w-full text-center bg-brand-urgent text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone-volume"></i> Llamar al SAT Urgente (693 95 05 56)
+                </a>
+                <a href="#contacto" class="w-full text-center bg-brand-blue text-white font-bold py-3 rounded-lg mobile-nav-link">
+                    Solicitar Estudio de Costes
+                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="contacto">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="section-title" style="text-align:left;">Contacto Técnico</h2>
-                <p style="margin-bottom:30px; font-size:1.1rem;">Realizamos valoraciones técnicas presenciales sin compromiso.</p>
+    <main id="inicio">
+        <!-- =====================================================================
+             HERO SECTION CON CRO Y KEYWORDS ESTRUCTURALES
+             ===================================================================== -->
+        <section class="relative bg-brand-navy text-white overflow-hidden py-20 lg:py-28">
+            <!-- Capa de fondo con imagen optimizada y degradado industrial -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1545173168-9f1947eeba01?q=80&w=2070&auto=format&fit=crop" 
+                     alt="Instalación de lavandería industrial con maquinaria de alto rendimiento" 
+                     class="w-full h-full object-cover object-center opacity-20 filter contrast-125">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/95 to-brand-blue/80"></div>
+            </div>
 
-                <div style="background:var(--primary-blue); color:white; padding:30px; border-radius:20px; box-shadow: 0 10px 20px rgba(0,74,153,0.2);">
-                    <p style="font-size:1.4rem; margin-bottom:10px;"><i class="fas fa-phone-alt"></i> <strong>693 95 05 56</strong></p>
-                    <p><i class="fas fa-envelope"></i> info@2lineenergy.com</p>
-                    <hr style="margin:15px 0; opacity:0.3;">
-                    <p><i class="fas fa-map-marker-alt"></i> Sede Central: Málaga.</p>
-                    <p><i class="fas fa-truck"></i> Cobertura: Toda Andalucía.</p>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Copy Hero -->
+                    <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-bluelight/20 border border-brand-bluelight/40 text-brand-bluelight text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Partner Técnico Oficial en Málaga, Costa del Sol y Andalucía
+                        </div>
+
+                        <!-- H1 Principal: Orientado estrictamente a keywords de alto volumen y conversión -->
+                        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.15]">
+                            Lavandería Industrial en Málaga: <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Maquinaria, Dosificación y SAT Urgente</span>
+                        </h1>
+
+                        <!-- Texto Persuasivo Enfocado a Dolores B2B -->
+                        <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl leading-relaxed">
+                            Maximizamos la rentabilidad de su planta de lavado. <strong>Reducimos el coste por kilo lavado (€/kg)</strong>, eliminamos paradas técnicas inesperadas y garantizamos una calidad higiénica impecable en hoteles, residencias y lavanderías comerciales.
+                        </p>
+
+                        <!-- Indicadores de Confianza Rápida (CRO) -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 pb-2 text-left">
+                            <div class="border-l-2 border-emerald-400 pl-3">
+                                <span class="block text-xl font-bold font-heading text-white">Hasta -28%</span>
+                                <span class="text-xs text-slate-400">Ahorro en agua y energía</span>
+                            </div>
+                            <div class="border-l-2 border-brand-bluelight pl-3">
+                                <span class="block text-xl font-bold font-heading text-white">24 / 7</span>
+                                <span class="text-xs text-slate-400">Asistencia técnica de guardia</span>
+                            </div>
+                            <div class="border-l-2 border-amber-400 pl-3 col-span-2 sm:col-span-1">
+                                <span class="block text-xl font-bold font-heading text-white">Multimarca</span>
+                                <span class="text-xs text-slate-400">Girbau, Domus, Fagor, Primus</span>
+                            </div>
+                        </div>
+
+                        <!-- Doble Llamada a la Acción (CTAs Principales) -->
+                        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#contacto" class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base uppercase tracking-wider">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <span>Solicitar estudio de optimización de lavado</span>
+                            </a>
+                            <a href="tel:+34693950556" class="inline-flex items-center justify-center gap-3 bg-brand-urgent hover:bg-red-700 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-red-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base uppercase tracking-wider">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Asistencia técnica urgente</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Destacada Lateral: Diagnóstico Rápido -->
+                    <div class="lg:col-span-4">
+                        <div class="bg-gradient-to-b from-slate-800/90 to-brand-navy/90 p-6 sm:p-8 rounded-2xl border border-slate-700 backdrop-blur-md shadow-2xl relative">
+                            <div class="absolute -top-3 right-6 bg-brand-bluelight text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Auditoría In-Situ
+                            </div>
+                            <h2 class="text-xl font-heading font-bold text-white mb-3">¿Problemas en su lencería o sobrecostes en lavandería?</h2>
+                            <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed">
+                                Evaluamos gratuitamente el estado de sus curvas de lavado, dosificación de cloro/oxígeno y desgaste de fibras en cualquier punto de la provincia de Málaga.
+                            </p>
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-200 mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    <span>Control de incrustaciones de cal y desajustes de pH.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    <span>Calibración de bombas dosificadoras de detergente.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    <span>Diagnóstico mecánico preventivo de rodamientos y variadores.</span>
+                                </li>
+                            </ul>
+                            <a href="#contacto" class="block text-center w-full bg-white hover:bg-slate-100 text-brand-navy font-bold py-3 px-4 rounded-xl transition text-sm">
+                                Agendar Visita Técnica Gratuita
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECCIÓN DE DOLORES DEL SECTOR Y SOLUCIONES DE VALOR (CRO B2B)
+             ===================================================================== -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-brand-bluelight uppercase tracking-widest">Enfoque de Coste y Rendimiento</span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-brand-navy mt-2">
+                        Eliminamos las tres mayores pérdidas financieras de una lavandería industrial
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Dolor 1: Coste por Kilo Descontrolado -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-scale-unbalanced"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Descontrol del coste por kilo (€/kg)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Exceso de temperatura, ciclos de centrifugado ineficientes y tiempos muertos elevan su factura eléctrica y de gas. Ajustamos cada ciclo para lograr el consumo exacto sin sacrificar el acabado textil.
+                        </p>
+                    </div>
+
+                    <!-- Dolor 2: Sobredosificación y Desgaste Textil -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Química deficiente y re-lavados</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Un 10% de re-lavados por manchas no tratadas duplica los costes de mano de obra y acorta la vida útil de sábanas y toallas. Implementamos dosificación multipump calibrada gramo a gramo.
+                        </p>
+                    </div>
+
+                    <!-- Dolor 3: Paradas Técnicas en Temporada Alta -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:border-brand-bluelight transition">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 text-brand-urgent flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">Paradas críticas en picos hoteleros</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Una lavadora de 60 kg detenida en pleno verano en Marbella o Fuengirola es inasumible. Nuestro servicio técnico dispone de stock de recambios y respuesta prioritaria en menos de 24 horas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SECCIÓN DE SERVICIOS (GRID OPTIMIZADO CON KEYWORDS ESTRUCTURALES)
+             ===================================================================== -->
+        <section id="servicios" class="py-20 bg-slate-100/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-brand-bluelight uppercase tracking-widest">Catálogo Integral B2B</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-navy mt-2">
+                        Soluciones Profesionales para Plantas de Lavado y OPL
+                    </h2>
+                    <p class="mt-4 text-slate-600 text-base">
+                        Desde el suministro y dimensionamiento de maquinaria de alta gama hasta el control químico y la asistencia preventiva in-situ.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    
+                    <!-- Servicio 1: Maquinaria Industrial -->
+                    <article id="maquinaria" class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-sky-50 text-brand-bluelight flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Venta · Instalación · Renting</span>
+                            <h3 class="text-2xl font-heading font-bold text-brand-navy mt-1 mb-4">
+                                Maquinaria Lavandería Industrial
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Suministro, montaje y puesta a punto de lavadoras industriales de alta y media velocidad con factor G elevado, secadoras con recirculación de aire y calandras murales o de paso.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-bluelight"></i>
+                                    <span>Lavadoras de barrera sanitaria para centros médicos.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-bluelight"></i>
+                                    <span>Secadoras a gas, vapor o electricidad de bajo consumo.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-bluelight"></i>
+                                    <span>Calandras de planchado y plegadoras automáticas.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-brand-bluelight"></i>
+                                    <span>Dimensionamiento de proyectos llave en mano en Málaga.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-brand-blue hover:text-white text-slate-800 font-bold text-sm transition">
+                            <span>Solicitar catálogo de maquinaria</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </article>
+
+                    <!-- Servicio 2: Químicos y Dosificación Automática -->
+                    <article id="quimicos" class="bg-white rounded-2xl p-8 border border-brand-bluelight/40 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between glow-card relative">
+                        <div class="absolute -top-3 right-6 bg-brand-bluelight text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Alta Eficiencia
+                        </div>
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-atom"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Sistemas Multipump & Ecológicos</span>
+                            <h3 class="text-2xl font-heading font-bold text-brand-navy mt-1 mb-4">
+                                Químicos y Dosificación Automática
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Instalación de equipos de dosificación multipompa controlados por microprocesador. Fórmulas químicas avanzadas para máxima desinfección, suavidad y blancura constante.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-emerald-500"></i>
+                                    <span>Sistemas de inyección peristáltica de alta precisión.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-emerald-500"></i>
+                                    <span>Detergentes enzimáticos, blanqueantes y neutralizantes.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-emerald-500"></i>
+                                    <span>Programas térmicos y químicos a 40°C para ahorro energético.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-emerald-500"></i>
+                                    <span>Cesión y mantenimiento integral de equipos de bombeo.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm transition shadow-sm">
+                            <span>Pedir propuesta de dosificación</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </article>
+
+                    <!-- Servicio 3: Servicio Técnico Oficial y Mantenimiento -->
+                    <article id="servicio-tecnico" class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Multimarca · Urgencias 24h</span>
+                            <h3 class="text-2xl font-heading font-bold text-brand-navy mt-1 mb-4">
+                                Servicio Técnico (SAT) Multimarca
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Diagnóstico electromecánico, sustitución de rodamientos, reparación de placas electrónicas, inversores de frecuencia y contratos de mantenimiento preventivo para hoteles y lavanderías.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-amber-500"></i>
+                                    <span>Cobertura multimarca: Girbau, Domus, Fagor, Primus.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-amber-500"></i>
+                                    <span>Mantenimiento preventivo programado para evitar paradas.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-amber-500"></i>
+                                    <span>Repuestos originales y unidades móviles equipadas.</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-check text-amber-500"></i>
+                                    <span>Tiempos de respuesta reducidos en toda la Costa del Sol.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="tel:+34693950556" class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-900 hover:bg-brand-urgent text-white font-bold text-sm transition">
+                            <span>Llamar al SAT: 693 95 05 56</span>
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             BLOQUE DE AUTORIDAD LOCAL & COBERTURA REGIONAL (MÁLAGA Y ANDALUCÍA)
+             ===================================================================== -->
+        <section id="autoridad" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-blue uppercase tracking-widest">
+                            <i class="fa-solid fa-location-dot"></i> Experiencia Técnica Directa
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-navy leading-tight">
+                            Especialistas en la Industria Hotelera y Lavanderías de la Costa del Sol
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Andalucía concentra una de las mayores demandas hoteleras de Europa. En <strong>2 Line Energy</strong> entendemos que el ciclo de lavado de toallas, mantelería y sábanas no puede detenerse jamás en plena campaña turística.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Nuestra base de operaciones e ingenieros de campo en <strong>Málaga capital</strong> nos permite prestar asistencia inmediata y suministros químicos recurrentes a clientes en toda la franja costera y provincias limítrofes.
+                        </p>
+
+                        <!-- Zonas de Cobertura Rápida -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                            <h3 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">
+                                Rutas diarias de asistencia técnica y suministro:
+                            </h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Málaga Capital</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Marbella</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Torremolinos</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Benalmádena</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Fuengirola</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Estepona</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Mijas</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Antequera</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-bluelight"></i> Sevilla & Cádiz</span>
+                            </div>
+                        </div>
+
+                        <!-- Métricas de Confianza -->
+                        <div class="grid grid-cols-3 gap-4 pt-2">
+                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="block text-2xl font-extrabold font-heading text-brand-blue">+15</span>
+                                <span class="text-xs text-slate-500 font-medium">Años de experiencia</span>
+                            </div>
+                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="block text-2xl font-extrabold font-heading text-brand-blue">&lt; 24h</span>
+                                <span class="text-xs text-slate-500 font-medium">Respuesta técnica</span>
+                            </div>
+                            <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="block text-2xl font-extrabold font-heading text-brand-blue">100%</span>
+                                <span class="text-xs text-slate-500 font-medium">Garantía oficial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico / Imagen de Autoridad Técnica -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=900" 
+                                 alt="Ingeniero de servicio técnico realizando calibración en maquinaria de lavandería industrial" 
+                                 class="w-full h-[460px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white">
+                                <div class="bg-brand-blue/90 backdrop-blur-sm p-4 rounded-xl border border-sky-400/30">
+                                    <p class="text-xs uppercase tracking-wider text-sky-200 font-bold">Compromiso 2 Line Energy</p>
+                                    <p class="text-sm font-medium mt-1">
+                                        "Auditamos sus lavadoras para que paguen solo por la energía y el químico estrictamente necesario."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             MARCAS COMPATIBLES (SEÑALES DE CONFIANZA TÉCNICA)
+             ===================================================================== -->
+        <section class="py-12 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-xs font-bold uppercase tracking-wider text-slate-500 mb-8">
+                    Especialistas multimarca en reparación y recambios para los principales fabricantes
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-14 text-slate-500 font-heading font-bold text-lg sm:text-xl">
+                    <span class="hover:text-brand-blue transition">GIRBAU</span>
+                    <span class="hover:text-brand-blue transition">DOMUS</span>
+                    <span class="hover:text-brand-blue transition">FAGOR INDUSTRIAL</span>
+                    <span class="hover:text-brand-blue transition">PRIMUS</span>
+                    <span class="hover:text-brand-blue transition">ELECTROLUX</span>
+                    <span class="hover:text-brand-blue transition">DANUBE</span>
+                    <span class="hover:text-brand-blue transition">GRANDIMPIANTI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             PREGUNTAS FRECUENTES (FAQ PARA SEO Y RESUELTA DE DUDAS B2B)
+             ===================================================================== -->
+        <section class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-brand-bluelight uppercase tracking-widest">Dudas Frecuentes</span>
+                    <h2 class="text-3xl font-heading font-bold text-brand-navy mt-2">
+                        Preguntas Habituales de Responsables de Mantenimiento y Dirección
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                        <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
+                            <span>¿Cuál es el tiempo de respuesta para averías en hoteles de la Costa del Sol?</span>
+                            <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                            Disponemos de equipo de guardia y vehículos de asistencia técnica con base en Málaga para atender urgencias en hoteles y lavanderías en Marbella, Fuengirola, Estepona y toda la Costa del Sol, priorizando incidencias que detienen la línea de lavado.
+                        </p>
+                    </details>
+
+                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                        <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
+                            <span>¿Cómo se realiza el estudio de optimización de coste por kilo (€/kg)?</span>
+                            <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                            Un técnico especialista visita sus instalaciones, monitoriza los ciclos reales de lavado, analiza la dureza del agua, revisa los consumos de agua/gas y audita la dosificación química actual. Con estos datos le entregamos un plan cuantificado de ahorro y amortización sin compromiso.
+                        </p>
+                    </details>
+
+                    <details class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 transition">
+                        <summary class="flex justify-between items-center font-heading font-bold text-slate-800 cursor-pointer list-none text-base sm:text-lg">
+                            <span>¿Suministran e instalan los equipos de dosificación de químicos?</span>
+                            <span class="text-brand-blue transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                            Sí. Ofrecemos sistemas multipompa automáticos mediante acuerdos de suministro químico que incluyen la cesión, instalación, calibración periódica y mantenimiento de las bombas sin coste adicional por avería del dosificador.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             FORMULARIO DE CONTACTO B2B (CRO AVANZADO)
+             ===================================================================== -->
+        <section id="contacto" class="py-20 bg-gradient-to-b from-slate-100 to-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Información de Contacto Directa y Credenciales -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-blue uppercase tracking-widest">
+                            <i class="fa-solid fa-headset"></i> Atención Técnica Profesional
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-brand-navy">
+                            Solicite su Estudio o Asistencia Técnica Inmediata
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Complete el formulario con los datos de su instalación y un técnico especialista se pondrá en contacto en menos de 2 horas laborables para coordinar visita o asesorarle.
+                        </p>
+
+                        <!-- Tarjeta de Llamada Rápida Directa -->
+                        <div class="bg-brand-navy text-white p-6 sm:p-8 rounded-2xl shadow-xl space-y-4 border-l-4 border-brand-bluelight">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-bluelight/20 flex items-center justify-center text-brand-bluelight text-2xl">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-slate-400">Teléfono Directo SAT</span>
+                                    <a href="tel:+34693950556" class="text-2xl font-bold font-heading text-white hover:text-sky-300 transition">
+                                        693 95 05 56
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <hr class="border-slate-700">
+
+                            <div class="space-y-2 text-sm text-slate-300">
+                                <p class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-envelope text-brand-bluelight"></i>
+                                    <span>info@2lineenergy.com</span>
+                                </p>
+                                <p class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-location-dot text-brand-bluelight"></i>
+                                    <span>Base Técnica: Málaga (Cobertura en toda Andalucía)</span>
+                                </p>
+                                <p class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-clock text-brand-bluelight"></i>
+                                    <span>Lunes a Viernes: 08:00 - 19:00 | Urgencias: 24 Horas</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Garantía de Confidencialidad -->
+                        <div class="flex items-center gap-3 text-xs text-slate-500">
+                            <i class="fa-solid fa-user-shield text-base text-emerald-600"></i>
+                            <span>Sus datos serán tratados exclusivamente para responder a su requerimiento técnico conforme a la RGPD.</span>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Conversión B2B -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200/80">
+                            
+                            <h3 class="text-2xl font-heading font-bold text-brand-navy mb-2">
+                                Formulario de Asesoramiento Técnico B2B
+                            </h3>
+                            <p class="text-slate-500 text-xs sm:text-sm mb-6">
+                                Diseñado para encargados de mantenimiento, gobernanza y directores de compras.
+                            </p>
+
+                            <!-- Endpoint integrado: Ratufa / Formspree compatible con GitHub Pages -->
+                            <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST" class="space-y-5">
+                                
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <!-- Nombre Completo -->
+                                    <div>
+                                        <label for="nombre" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Nombre y Apellidos *
+                                        </label>
+                                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Carlos Gómez"
+                                               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                    </div>
+
+                                    <!-- Nombre Empresa / Hotel -->
+                                    <div>
+                                        <label for="empresa" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Empresa o Establecimiento *
+                                        </label>
+                                        <input type="text" id="empresa" name="empresa" required placeholder="Ej: Hotel Costa Sol ****"
+                                               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <!-- Teléfono de Contacto -->
+                                    <div>
+                                        <label for="telefono" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Teléfono de Contacto *
+                                        </label>
+                                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 600 000 000"
+                                               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                    </div>
+
+                                    <!-- Correo Electrónico -->
+                                    <div>
+                                        <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Correo Electrónico Corporativo
+                                        </label>
+                                        <input type="email" id="email" name="email" placeholder="mantenimiento@hotel.com"
+                                               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <!-- Tipo de Negocio -->
+                                    <div>
+                                        <label for="tipo_negocio" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Tipo de Negocio *
+                                        </label>
+                                        <select id="tipo_negocio" name="tipo_negocio" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                            <option value="" disabled selected>Seleccione tipo de instalación...</option>
+                                            <option value="Hotel / Complejo Turístico">Hotel / Complejo Turístico</option>
+                                            <option value="Lavandería Comercial / Industrial">Lavandería Comercial / Industrial</option>
+                                            <option value="Residencia de Mayores / Hospital">Residencia de Mayores / Hospital</option>
+                                            <option value="Gestión Apartamentos Turísticos">Gestión de Apartamentos Turísticos</option>
+                                            <option value="Otro">Otro sector</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Servicio Requerido -->
+                                    <div>
+                                        <label for="servicio_requerido" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                            Servicio Requerido *
+                                        </label>
+                                        <select id="servicio_requerido" name="servicio_requerido" required
+                                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
+                                            <option value="" disabled selected>Seleccione servicio...</option>
+                                            <option value="Estudio de Optimización de Costes (€/kg)">Estudio de Optimización de Costes (€/kg)</option>
+                                            <option value="Urgencia Asistencia Técnica SAT">Asistencia Técnica Urgente SAT</option>
+                                            <option value="Dosificación Automática y Químicos">Dosificación Automática y Químicos</option>
+                                            <option value="Compra / Renting de Maquinaria">Compra / Renting de Maquinaria</option>
+                                            <option value="Contrato de Mantenimiento Preventivo">Contrato Mantenimiento Preventivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Mensaje / Descripción de Maquinaria o Incidencia -->
+                                <div>
+                                    <label for="mensaje" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                                        Detalles de la instalación o maquinaria a tratar *
+                                    </label>
+                                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Indique marcas de lavadoras/secadoras (Girbau, Domus, etc.), kilos de carga aproximados, o fallo que presenta el equipo..."
+                                              class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50"></textarea>
+                                </div>
+
+                                <!-- Redirección y Anti-Spam -->
+                                <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia/">
+                                <input type="text" name="_gotcha" style="display:none">
+
+                                <!-- Botón de Envío CRO -->
+                                <button type="submit" class="w-full py-4 px-6 rounded-xl bg-brand-blue hover:bg-brand-navy text-white font-heading font-bold text-base uppercase tracking-wider shadow-lg shadow-brand-blue/30 transition-all transform active:scale-98 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Solicitar Consulta Técnica Profesional</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER B2B CON DATOS DE EMPRESA Y SEO GEOGRÁFICO
+         ===================================================================== -->
+    <footer class="bg-brand-navy text-slate-400 text-sm border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                
+                <div class="space-y-4">
+                    <img src="img/logo_2lineenergy.png" alt="2 Line Energy" class="h-10 w-auto brightness-0 invert opacity-90" onerror="this.src='https://2lineenergy.com/lavanderia/img/logo_2lineenergy.png'">
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Ingeniería y soluciones aplicadas a lavandería industrial. Reducción demostrable de costes operativos y mantenimiento electromecánico de alta disponibilidad.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-4">Servicios Principales</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#maquinaria" class="hover:text-white transition">Maquinaria Industrial (Girbau, Domus, Fagor)</a></li>
+                        <li><a href="#quimicos" class="hover:text-white transition">Dosificación Automática Multipump</a></li>
+                        <li><a href="#servicio-tecnico" class="hover:text-white transition">SAT Urgente 24 Horas</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition">Auditoría de Coste por Kilo (€/kg)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-4">Áreas de Cobertura SAT</h4>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        Málaga Capital, Marbella, Puerto Banús, San Pedro de Alcántara, Estepona, Fuengirola, Benalmádena, Torremolinos, Mijas, Nerja, Ronda, Antequera, Sevilla, Cádiz y resto de Andalucía.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-4">Contacto Directo</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-bluelight"></i> <a href="tel:+34693950556" class="hover:text-white transition">693 95 05 56</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-bluelight"></i> <a href="mailto:info@2lineenergy.com" class="hover:text-white transition">info@2lineenergy.com</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-brand-bluelight"></i> <span>Málaga, España</span></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="form-card">
-                <form action="https://n1.ratufa.io/forms/y8e28zmw" method="POST">
-                    <input type="text" name="empresa" class="form-control" placeholder="Nombre / Empresa" required>
-                    <input type="tel" name="telefono" class="form-control" placeholder="Teléfono de contacto" required>
-                    
-                    <select name="interes" class="form-control">
-                        <option value="Urgencia SAT">Urgencia SAT 24h</option>
-                        <option value="Presupuesto Quimicos">Presupuesto Químicos</option>
-                        <option value="Ahorro Energetico">Estudio de Ahorro</option>
-                    </select>
-
-                    <textarea name="mensaje" class="form-control" style="height: 120px;" placeholder="¿Qué maquinaria o servicio necesita?" required></textarea>
-
-                    <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia">
-
-                    <button type="submit" class="btn-submit">Enviar Solicitud Profesional</button>
-                </form>
+            <div class="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 2 Line Energy. Todos los derechos reservados. Soluciones Avanzadas para Lavandería Industrial.</p>
+                <div class="flex gap-4">
+                    <a href="#inicio" class="hover:text-white transition">Volver arriba ↑</a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <a href="https://wa.me/34693950556" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <footer style="background: var(--dark-grey); color: white; text-align: center; padding: 40px 20px;">
-        <p>&copy; 2026 2 Line Energy. Soluciones Avanzadas para Lavandería Industrial.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Especialistas en Málaga · Sevilla · Cádiz · Huelva · Córdoba · Jaén · Granada · Almería</p>
     </footer>
 
-    <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=y8e28zmw&n=n1.ratufa.io"></script>
+    <!-- =====================================================================
+         BOTÓN FLOTANTE DE WHATSAPP BUSINESS (CONVERSIÓN DIRECTA MOBILE/DESKTOP)
+         ===================================================================== -->
+    <a href="https://wa.me/34693950556?text=Hola%202%20Line%20Energy,%20necesito%20asistencia%20técnica%20o%20información%20para%20mi%20lavandería%20industrial" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group"
+       aria-label="Contactar por WhatsApp Business con Servicio Técnico">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip informativo en desktop para aumentar CTR -->
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold text-xs pl-0 group-hover:pl-2">
+            SAT WhatsApp 24h
+        </span>
+    </a>
+
+    <!-- =====================================================================
+         SCRIPTS MÍNIMOS PARA INTERACCIÓN Y VALIDACIÓN SIN DEPENDENCIAS BACKEND
+         ===================================================================== -->
+    <script>
+        // Control de menú móvil
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Cerrar menú al pulsar cualquier enlace
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+
+    <!-- Loader de Ratufa (si el formulario está enlazado a esta cuenta) -->
+    <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=y8e28zmw&n=n1.ratufa.io" async></script>
 </body>
 </html>
