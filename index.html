@@ -370,9 +370,9 @@
                                     <span>Garantía directa de 2 Line Energy y servicio postventa.</span>
                                 </li>
                             </ul>
-                            <a href="#contacto" class="block text-center w-full bg-white hover:bg-slate-100 text-brand-navy font-bold py-3 px-4 rounded-xl transition text-sm">
+                            <button type="button" onclick="selectServiceQuote('Plan Renove / Sustitución de Maquinaria')" class="block text-center w-full bg-white hover:bg-slate-100 text-brand-navy font-bold py-3 px-4 rounded-xl transition text-sm">
                                 Solicitar Presupuesto de Maquinaria
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -682,10 +682,10 @@
                         </div>
 
                         <div class="pt-2">
-                            <a href="#contacto" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm uppercase tracking-wider transition shadow-md">
+                            <button type="button" onclick="selectServiceQuote('Dosificación Automática y Químicos')" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm uppercase tracking-wider transition shadow-md">
                                 <i class="fa-solid fa-flask"></i>
                                 <span>Solicitar Prueba Química y Dosificación</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -1314,19 +1314,43 @@
             updateSavings();
         }
 
-        function transferCalculationToForm() {
-            const kg = parseFloat(kgSlider.value).toLocaleString('es-ES');
-            const saving = savingEurosDisplay.textContent;
-            
-            const mensajeField = document.getElementById('mensaje');
+        // Plantillas automáticas de detalles según el servicio seleccionado
+        const serviceTemplates = {
+            'Presupuesto Maquinaria Carbonell': 'Solicito catálogo técnico, opciones de venta o renting y precios para maquinaria pesada CARBONELL (lavacentrífugadoras de alta capacidad / secadoras industriales / calandras de planchado).',
+            'Presupuesto Maquinaria Oasis': 'Solicito información técnica, tarifas de compra o renting e instalación de maquinaria OASIS (lavadoras flotantes OPL / secadoras de bajo consumo / torres compactas de lavado).',
+            'Presupuesto Maquinaria Girbau': 'Solicito propuesta económica y opciones de renting para maquinaria tecnológica GIRBAU (lavadoras de alta velocidad Serie Genius / secadoras / calandras).',
+            'Plan Renove / Sustitución de Maquinaria': 'Plan Renove: Dispongo de maquinaria antigua con averías recurrentes o consumos elevados y deseo presupuesto para sustituirla por maquinaria nueva eficiente (Carbonell / Oasis / Girbau).',
+            'Urgencia Asistencia Técnica SAT Multimarca': 'URGENCIA SAT: Avería en maquinaria de lavandería industrial. Marca y modelo: [indicar Girbau, Domus, Fagor, Primus, etc.]. Código de error o fallo: [describir avería]. Ubicación: [indicar localidad].',
+            'Dosificación Automática y Químicos': 'Solicito propuesta para instalación de bombas automáticas multipump y suministro periódico de químicos profesionales de alto rendimiento para lavandería.',
+            'Estudio de Optimización de Costes (€/kg)': 'Deseo solicitar una auditoría técnica presencial gratuita en Málaga/Costa del Sol para optimizar el coste por kilo lavado (€/kg), reducir consumos de energía/agua y calibrar curvas de lavado.'
+        };
+
+        // Realce visual temporal para confirmar la actualización automática
+        function highlightFields(selectEl, textareaEl) {
+            [selectEl, textareaEl].forEach(el => {
+                if (!el) return;
+                el.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/60');
+                setTimeout(() => {
+                    el.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/60');
+                }, 1600);
+            });
+        }
+
+        // Función unificada que actualiza automáticamente "Interés Principal" y "Detalles"
+        function selectServiceQuote(serviceKey, customMessage) {
             const servicioField = document.getElementById('servicio_requerido');
+            const mensajeField = document.getElementById('mensaje');
 
             if (servicioField) {
-                servicioField.value = 'Estudio de Optimización de Costes (€/kg)';
+                servicioField.value = serviceKey;
             }
 
             if (mensajeField) {
-                mensajeField.value = `Interesado en optimización y renovación con maquinaria eficiente. Estimación de volumen: ${kg} kg/mes. Ahorro potencial calculado: ${saving}/año. Solicito auditoría presencial y catálogo.`;
+                mensajeField.value = customMessage || (serviceTemplates[serviceKey] || '');
+            }
+
+            if (servicioField && mensajeField) {
+                highlightFields(servicioField, mensajeField);
             }
 
             const formSection = document.getElementById('contacto');
@@ -1334,30 +1358,36 @@
                 formSection.scrollIntoView({ behavior: 'smooth' });
                 setTimeout(() => {
                     document.getElementById('nombre')?.focus();
-                }, 600);
+                }, 500);
             }
         }
 
-        // Selección directa de presupuesto según marca (Carbonell, Oasis, Girbau)
+        // Selección directa al pulsar las tarjetas de maquinaria (Carbonell, Oasis, Girbau)
         function selectMachineQuote(marca) {
-            const servicioField = document.getElementById('servicio_requerido');
-            const mensajeField = document.getElementById('mensaje');
+            selectServiceQuote(`Presupuesto Maquinaria ${marca}`);
+        }
 
-            if (servicioField) {
-                servicioField.value = `Presupuesto Maquinaria ${marca}`;
-            }
+        // Traspaso de la Calculadora de Ahorro (€/kg)
+        function transferCalculationToForm() {
+            const kg = parseFloat(kgSlider.value).toLocaleString('es-ES');
+            const saving = savingEurosDisplay.textContent;
+            const customText = `Interesado en optimización y renovación con maquinaria eficiente. Estimación de volumen: ${kg} kg/mes. Ahorro potencial calculado: ${saving}/año. Solicito auditoría presencial gratuita y catálogo.`;
+            
+            selectServiceQuote('Estudio de Optimización de Costes (€/kg)', customText);
+        }
 
-            if (mensajeField) {
-                mensajeField.value = `Solicito catálogo técnico, opciones de venta o renting y precios para maquinaria ${marca} (lavadoras / secadoras / calandras).`;
-            }
+        // Sincronización automática directa al cambiar el desplegable en el formulario
+        const servicioSelect = document.getElementById('servicio_requerido');
+        const mensajeTextarea = document.getElementById('mensaje');
 
-            const formSection = document.getElementById('contacto');
-            if (formSection) {
-                formSection.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                    document.getElementById('nombre')?.focus();
-                }, 600);
-            }
+        if (servicioSelect && mensajeTextarea) {
+            servicioSelect.addEventListener('change', function() {
+                const selectedVal = this.value;
+                if (serviceTemplates[selectedVal]) {
+                    mensajeTextarea.value = serviceTemplates[selectedVal];
+                    highlightFields(servicioSelect, mensajeTextarea);
+                }
+            });
         }
 
         // Envío directo de los datos del formulario por WhatsApp
