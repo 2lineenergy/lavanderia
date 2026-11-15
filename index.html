@@ -150,12 +150,79 @@
         },
         {
           "@type": "Product",
+          "@id": "https://lavanderia.2lineenergy.com/#product-maquinaria",
           "name": "Maquinaria de Lavandería Industrial Carbonell, Oasis y Girbau",
-          "description": "Lavadoras industriales de alta velocidad, secadoras de recirculación, barreras sanitarias y calandras de planchado para hoteles y lavanderías en Andalucía.",
-          "brand": [
-            { "@type": "Brand", "name": "Carbonell" },
-            { "@type": "Brand", "name": "Oasis" },
-            { "@type": "Brand", "name": "Girbau" }
+          "image": "https://lavanderia.2lineenergy.com/img/logo_2lineenergy.png",
+          "description": "Venta, renting e instalación de lavadoras industriales de alta velocidad, secadoras de recirculación, barreras sanitarias y calandras de planchado para hoteles y lavanderías en Andalucía.",
+          "brand": {
+            "@type": "Brand",
+            "name": "2 Line Energy"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "EUR",
+            "lowPrice": "1500",
+            "highPrice": "45000",
+            "offerCount": "25",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://lavanderia.2lineenergy.com/",
+            "seller": {
+              "@type": "Organization",
+              "name": "2 Line Energy"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "32",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://lavanderia.2lineenergy.com/#service-sat",
+          "name": "Servicio Técnico SAT Lavandería Industrial",
+          "provider": { "@id": "https://lavanderia.2lineenergy.com/#localbusiness" },
+          "serviceType": "Reparación y mantenimiento multimarca de maquinaria de lavandería industrial",
+          "areaServed": "Málaga, Costa del Sol y Andalucía"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://lavanderia.2lineenergy.com/#service-quimicos",
+          "name": "Sistemas de Dosificación y Químicos Profesionales",
+          "provider": { "@id": "https://lavanderia.2lineenergy.com/#localbusiness" },
+          "serviceType": "Instalación de bombas multipump y química industrial de lavado"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://lavanderia.2lineenergy.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el tiempo de respuesta para averías urgentes en hoteles de la Costa del Sol?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contamos con técnicos de guardia permanentes en la provincia de Málaga y Costa del Sol (Marbella, Fuengirola, Benalmádena, Estepona), ofreciendo respuesta prioritaria urgente para evitar interrupciones en la producción de lencería hotelera."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo ayuda 2 Line Energy a reducir el coste por kilo (€/kg) lavado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Realizamos una auditoría técnica completa que ajusta la curva de temperatura, los tiempos de centrifugado, la recuperación térmica y la dosificación milimétrica de químicos multipump, reduciendo consumos de agua, gas/electricidad y re-lavados hasta un 28%."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Con qué marcas de maquinaria industrial trabajan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Somos distribuidores de maquinaria Carbonell, Oasis y Girbau. Además, ofrecemos asistencia técnica multimarca y recambios para fabricantes como Domus, Fagor Industrial, Primus y Electrolux Professional."
+              }
+            }
           ]
         }
       ]
