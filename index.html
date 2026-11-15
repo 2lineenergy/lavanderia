@@ -1050,8 +1050,18 @@
                                 Diseñado para encargados de compras, mantenimiento, gobernanza y gerencia.
                             </p>
 
-                            <!-- Endpoint integrado: Ratufa / Formspree compatible con GitHub Pages -->
-                            <form id="contactForm" action="https://n1.ratufa.io/forms/y8e28zmw" method="POST" class="space-y-5">
+                            <!-- Formulario Limpio 100% Libre de Scripts de Rastreo (Cero bloqueos por antivirus) -->
+                            <form id="contactForm" action="https://formsubmit.co/info@2lineenergy.com" method="POST" class="space-y-5">
+                                
+                                <!-- Configuración FormSubmit segura -->
+                                <input type="hidden" name="_subject" value="Nueva Solicitud de Lavandería Industrial - 2 Line Energy">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia/">
+                                <input type="text" name="_honey" style="display:none">
+
+                                <!-- Mensaje de Confirmación / Alerta -->
+                                <div id="formAlert" class="hidden p-4 rounded-xl text-sm font-medium"></div>
                                 
                                 <div class="grid sm:grid-cols-2 gap-4">
                                     <!-- Nombre Completo -->
@@ -1086,9 +1096,9 @@
                                     <!-- Correo Electrónico -->
                                     <div>
                                         <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                                            Correo Electrónico Corporativo
+                                            Correo Electrónico Corporativo *
                                         </label>
-                                        <input type="email" id="email" name="email" placeholder="mantenimiento@hotel.com"
+                                        <input type="email" id="email" name="email" required placeholder="mantenimiento@hotel.com"
                                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50">
                                     </div>
                                 </div>
@@ -1138,14 +1148,22 @@
                                               class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-bluelight focus:ring-2 focus:ring-brand-bluelight/20 outline-none transition text-sm text-slate-800 bg-slate-50/50"></textarea>
                                 </div>
 
-                                <!-- Redirección y Anti-Spam -->
-                                <input type="hidden" name="_next" value="https://2lineenergy.com/lavanderia/">
-                                <input type="text" name="_gotcha" style="display:none">
-
-                                <!-- Botón de Envío CRO -->
-                                <button type="submit" class="w-full py-4 px-6 rounded-xl bg-brand-blue hover:bg-brand-navy text-white font-heading font-bold text-base uppercase tracking-wider shadow-lg shadow-brand-blue/30 transition-all transform active:scale-98 flex items-center justify-center gap-2">
+                                <!-- Botón de Envío por Email -->
+                                <button type="submit" id="submitBtn" class="w-full py-4 px-6 rounded-xl bg-brand-blue hover:bg-brand-navy text-white font-heading font-bold text-base uppercase tracking-wider shadow-lg shadow-brand-blue/30 transition-all transform active:scale-98 flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Solicitar Información y Presupuesto</span>
+                                    <span>Solicitar Información y Presupuesto por Email</span>
+                                </button>
+
+                                <!-- Opción Directa Alternativa por WhatsApp -->
+                                <div class="relative flex py-2 items-center">
+                                    <div class="flex-grow border-t border-slate-200"></div>
+                                    <span class="flex-shrink mx-4 text-xs font-semibold text-slate-400 uppercase">o para respuesta inmediata</span>
+                                    <div class="flex-grow border-t border-slate-200"></div>
+                                </div>
+
+                                <button type="button" onclick="sendViaWhatsApp()" class="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm uppercase tracking-wider transition-all transform active:scale-98 flex items-center justify-center gap-2 shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>Enviar estos datos por WhatsApp al SAT</span>
                                 </button>
                             </form>
                         </div>
@@ -1341,9 +1359,75 @@
                 }, 600);
             }
         }
-    </script>
 
-    <!-- Loader de Ratufa (si el formulario está enlazado a esta cuenta) -->
-    <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=y8e28zmw&n=n1.ratufa.io" async></script>
+        // Envío directo de los datos del formulario por WhatsApp
+        function sendViaWhatsApp() {
+            const nombre = document.getElementById('nombre')?.value.trim() || 'No especificado';
+            const empresa = document.getElementById('empresa')?.value.trim() || 'No especificada';
+            const telefono = document.getElementById('telefono')?.value.trim() || 'No especificado';
+            const email = document.getElementById('email')?.value.trim() || 'No especificado';
+            const tipoNegocio = document.getElementById('tipo_negocio')?.value || 'No especificado';
+            const servicio = document.getElementById('servicio_requerido')?.value || 'Consulta General';
+            const mensaje = document.getElementById('mensaje')?.value.trim() || 'Sin detalles adicionales';
+
+            const textoWhatsApp = 
+`*SOLICITUD WEB - 2 LINE ENERGY*
+--------------------------------
+👤 *Nombre:* ${nombre}
+🏢 *Empresa / Hotel:* ${empresa}
+📞 *Teléfono:* ${telefono}
+✉️ *Email:* ${email}
+🏭 *Tipo de Negocio:* ${tipoNegocio}
+⚙️ *Interés:* ${servicio}
+📝 *Mensaje:* ${mensaje}`;
+
+            const urlWhatsApp = `https://wa.me/34693950556?text=${encodeURIComponent(textoWhatsApp)}`;
+            window.open(urlWhatsApp, '_blank');
+        }
+
+        // Manejo Seguro del Formulario (FormSubmit AJAX - Cero Bloqueos Antivirus)
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formAlert = document.getElementById('formAlert');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Cambiar estado del botón
+                const originalBtnContent = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando solicitud...</span>';
+                formAlert.classList.add('hidden');
+
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                fetch("https://formsubmit.co/ajax/info@2lineenergy.com", {
+                    method: "POST",
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(response => response.json())
+                .then(data => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                    
+                    formAlert.className = 'p-4 rounded-xl text-sm font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300 block';
+                    formAlert.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-600 mr-2 text-base"></i> ¡Solicitud enviada con éxito! Nos pondremos en contacto en menos de 2 horas. Si es una urgencia, puede llamarnos directamente al <a href="tel:+34693950556" class="underline font-bold">693 95 05 56</a>.';
+                    
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    // Si el navegador bloquea fetch o la red falla, envía de forma nativa estándar
+                    contactForm.submit();
+                });
+            });
+        }
+    </script>
 </body>
 </html>
